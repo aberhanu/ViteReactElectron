@@ -1,6 +1,10 @@
 import { Link, NavLink } from 'react-router-dom'
 import Logo from '../../assets/PlotgardenerLogo.png'
 import './index.scss'
+import { FaFile } from "react-icons/fa";
+import { BsBoundingBoxCircles } from "react-icons/bs";
+// import { faFile } from '@fortawesome/free-regular-svg-icons'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Sidebar(){
     return(
@@ -10,11 +14,12 @@ function Sidebar(){
         </Link>
 
         <nav>
-            <NavLink exact="true" activeclassname="active" to="/">
-                <img className='place-holder' src="https://via.placeholder.com/150" />
+            <NavLink exact="true" activeclassname="active" to="/" className='navigation-link'>
+                <FaFile className='icon-images'/>
             </NavLink>
             <NavLink exact="true" activeclassname="active" to="/plots-page">
-                <img className='place-holder' src="https://via.placeholder.com/150" />
+                <BsBoundingBoxCircles className='icon-images'/>
+                
             </NavLink>
         </nav>
     </div>

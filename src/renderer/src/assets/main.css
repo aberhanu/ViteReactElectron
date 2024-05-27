@@ -255,3 +255,55 @@ li {
 #outputPath {
   margin-top: 10px;
 }
+
+.sidenav {
+  width: 240px;
+  background: #2c2c2c;
+  position: absolute;
+  height: 100%;
+  padding: 0 30px;
+  left: -100%;
+  transition: all 1s;
+}
+
+.sidenav.active{
+  left: 0;
+}
+
+.sidenav ul {
+  padding: 0;
+}
+
+.sidenav ul li{
+  list-style-type: none;
+  margin: 10px 0;
+}
+
+.sidenav ul li a{
+  color: #eaecef;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.sidenav ul li a:hover,
+.sidenav ul li a:active{
+  background: #172b4b;
+
+  
+}
+
+/* Logo Styling DONT FORGET*/
+.logo {
+  display: block;
+  padding: 0px 0;
+}
+
+.logo img{
+  display: block;
+  margin: 8px auto;
+  width: 40px;
+  height: auto;
+}

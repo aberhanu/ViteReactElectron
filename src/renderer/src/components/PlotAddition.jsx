@@ -58,6 +58,10 @@ function PlotAddition() {
     setPlots(updatedPlots);
   };
 
+  const handleDeletePlot = (id) => {
+    setPlots(plots.filter((plot) => plot.id !== id));
+  }
+
   const handleRunScript = () => {
     window.electron.runScript();
   };
@@ -92,6 +96,7 @@ function PlotAddition() {
                     value={plot.y}
                     onChange={(event) => handleYChange(plot.id, event)}
                   />
+                  <button onClick={() => handleDeletePlot(plot.id)}>Delete Plot</button>
                 </div>
               )}
             </li>
