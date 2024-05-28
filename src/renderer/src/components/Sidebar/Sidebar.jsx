@@ -7,6 +7,9 @@ import { BsBoundingBoxCircles } from "react-icons/bs";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function Sidebar(){
+    function pageUpdate(){
+        doPageUpdate(Math.random())
+    }
     return(
         <div className='nav-bar'>
         <Link className ='logo' to='/'>
@@ -19,7 +22,6 @@ function Sidebar(){
             </NavLink>
             <NavLink exact="true" activeclassname="active" to="/plots-page">
                 <BsBoundingBoxCircles className='icon-images'/>
-                
             </NavLink>
         </nav>
     </div>

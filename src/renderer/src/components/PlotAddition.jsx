@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import {defaultPlots, updateDefaultPlots} from './Defaults'
+
 
 function PlotAddition() {
-  const [plots, setPlots] = useState([]);
+  const [plots, setPlots] = useState(defaultPlots);
   const [inputValue, setInputValue] = useState('');
 
   const handleAddPlot = () => {
@@ -13,6 +15,7 @@ function PlotAddition() {
       y: '',
     };
 
+    updateDefaultPlots([...plots, newPlot]);
     setPlots([...plots, newPlot]);
     setInputValue('');
     window.electron.addItem(newPlot);
@@ -31,6 +34,7 @@ function PlotAddition() {
       }
       return plot;
     });
+    updateDefaultPlots(updatedPlots);
     setPlots(updatedPlots);
   };
 
@@ -43,6 +47,7 @@ function PlotAddition() {
       }
       return plot;
     });
+    updateDefaultPlots(updatedPlots);
     setPlots(updatedPlots);
   };
 
@@ -55,10 +60,13 @@ function PlotAddition() {
       }
       return plot;
     });
+    updateDefaultPlots(updatedPlots);
     setPlots(updatedPlots);
+    
   };
 
   const handleDeletePlot = (id) => {
+    updateDefaultPlots(plots.filter((plot) => plot.id !== id));
     setPlots(plots.filter((plot) => plot.id !== id));
   }
 
