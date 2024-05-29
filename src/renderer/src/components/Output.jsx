@@ -3,8 +3,6 @@ import React, { useEffect, useState, useRef } from 'react';
 
 function Output() {
   const [pdfPath, setPdfPath] = useState('');
-  const embedRef = useRef(null);
-  
 
   useEffect(() => {
     const handleRefreshPDF = (event, savePath) => {

@@ -3,8 +3,9 @@ import Logo from '../../assets/PlotgardenerLogo.png'
 import './index.scss'
 import { FaFile } from "react-icons/fa";
 import { BsBoundingBoxCircles } from "react-icons/bs";
-// import { faFile } from '@fortawesome/free-regular-svg-icons'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FaCode } from "react-icons/fa";
+import { LuNetwork } from "react-icons/lu";
+import { MdIosShare } from "react-icons/md";
 
 function Sidebar(){
     function pageUpdate(){
@@ -22,6 +23,15 @@ function Sidebar(){
             </NavLink>
             <NavLink exact="true" activeclassname="active" to="/plots-page">
                 <BsBoundingBoxCircles className='icon-images'/>
+            </NavLink>
+            <NavLink exact="true" activeclassname="active" to="/nodes-page">
+                <LuNetwork className='icon-images'/>
+            </NavLink>
+            <NavLink exact="true" activeclassname="active" to="/code-page">
+                <FaCode className='icon-images'/>
+            </NavLink>
+            <NavLink exact="true" activeclassname="active" to="/share-page">
+                <MdIosShare className='icon-images'/>
             </NavLink>
         </nav>
     </div>
