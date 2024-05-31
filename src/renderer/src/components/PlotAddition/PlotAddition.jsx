@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import {defaultPlots, updateDefaultPlots} from './Defaults'
+import {defaultPlots, updateDefaultPlots} from '../Defaults'
+import './index.scss';
 
 
 function PlotAddition() {
@@ -75,38 +76,40 @@ function PlotAddition() {
   };
 
   return (
-    <div id="container">
+    <>
       <h1>Add Plots</h1>
       <div id="plotListContainer">
         <ul id="plotList">
           {plots.map((plot) => (
             <li key={plot.id}>
-              {plot.name}
-              <select
-                value={plot.category}
-                onChange={(event) => handleCategoryChange(plot.id, event)}
-              >
-                <option value="Select One">Select One</option>
-                <option value="plot">Plot</option>
-                <option value="barplot">Barplot</option>
-              </select>
-              {(plot.category === 'plot' || plot.category === 'barplot') && (
-                <div>
-                  <input
-                    type="text"
-                    placeholder="x coordinate"
-                    value={plot.x}
-                    onChange={(event) => handleXChange(plot.id, event)}
-                  />
-                  <input
-                    type="text"
-                    placeholder="y coordinate"
-                    value={plot.y}
-                    onChange={(event) => handleYChange(plot.id, event)}
-                  />
-                  <button onClick={() => handleDeletePlot(plot.id)}>Delete Plot</button>
-                </div>
-              )}
+              <div className='plot-div'>
+                <p>{plot.name}</p>
+                <select placeholder='Plot Type'
+                  value={plot.category}
+                  onChange={(event) => handleCategoryChange(plot.id, event)}
+                >
+                  <option value="Select One">Select One</option>
+                  <option value="plot">Plot</option>
+                  <option value="barplot">Barplot</option>
+                </select>
+                {(plot.category === 'plot' || plot.category === 'barplot') && (
+                  <div>
+                    <input
+                      type="text"
+                      placeholder="x coordinate"
+                      value={plot.x}
+                      onChange={(event) => handleXChange(plot.id, event)}
+                    />
+                    <input
+                      type="text"
+                      placeholder="y coordinate"
+                      value={plot.y}
+                      onChange={(event) => handleYChange(plot.id, event)}
+                    />
+                    <button onClick={() => handleDeletePlot(plot.id)}>Delete Plot</button>
+                  </div>
+                )}
+              </div>
             </li>
           ))}
         </ul>
@@ -125,7 +128,7 @@ function PlotAddition() {
       <div>
         <button id="rbtn" type="button" onClick={handleRunScript}>Run Script</button>
       </div>
-    </div>
+    </>
   );
 }
 

@@ -8,7 +8,6 @@ function Output() {
     const handleRefreshPDF = (event, savePath) => {
       console.log(`Received refresh-pdf event with path: ${savePath}`);
       setPdfPath(savePath)
-      console.log(pdfPath)
     };
 
     if (window.electron && window.electron.onRefreshPDF) {
@@ -25,9 +24,9 @@ function Output() {
   }, []);
 
   return (
-    <div>
+    <div className='output-div'>
       {pdfPath ? (
-        <embed src={`atom://${pdfPath}`} id="pdf" width="850px" height="1100px" />
+        <embed src={`atom://${pdfPath}`}  id="pdf" width="850px" height="1100px" />
       ) : (
         <p>No PDF Generated</p>
       )}

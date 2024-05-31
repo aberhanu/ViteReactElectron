@@ -8,20 +8,17 @@
     z-index: 3;
     min-height: 500px;
     
-
     .logo {
         display: block;
         padding: 0px 0;
-
+    
         img{
             display: block;
             margin: 8px auto;
             width: 45px;
-            height: auto;
             margin-bottom: 15px;
         }
     }
-
 
 
     nav {
@@ -47,4 +44,34 @@
     height: 33px; /* Adjust the size as needed */
     color: grey;
     margin: 10px 0;
+}
+
+.logo-image {
+    display: block;
+    padding: 0px 0;
+    display: block;
+    margin: 8px auto;
+    width: 45px;
+    margin-bottom: 15px;
+}
+
+.page{
+    margin-left: 45px;
+}
+
+.container {
+    background-color: #232323;
+    width: 250px;
+    height: 100%;
+    top: 0;
+    position: fixed;
+    padding: 20px;
+
+    h1,h2,h3,h4,h5{
+        color: white;
+    }
+    p{
+        color: white;
+        margin-bottom: 1px;
+    }
 }

@@ -176,13 +176,7 @@ body {
 }
 
 /* Styling container */
-#container {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
+
 
 /* Styling headings */
 h1 {
@@ -198,19 +192,22 @@ input[type="text"], button {
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 0px;
   margin-bottom: 10px;
 }
 
 button {
-  background-color: #007bff;
+  background-color: transparent;
+  border-radius: 0px;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: white;
+  color: black;
+  
 }
 
 /* Styling plot list */
@@ -230,19 +227,14 @@ li {
 
 /* Styling run script button */
 #rbtn {
-  background-color: #28a745;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
+  
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-#rbtn:hover {
-  background-color: #218838;
-}
+
 
 /* Styling PDF embed */
 #pdf {
@@ -254,45 +246,6 @@ li {
 /* Styling output path */
 #outputPath {
   margin-top: 10px;
-}
-
-.sidenav {
-  width: 240px;
-  background: #2c2c2c;
-  position: absolute;
-  height: 100%;
-  padding: 0 30px;
-  left: -100%;
-  transition: all 1s;
-}
-
-.sidenav.active{
-  left: 0;
-}
-
-.sidenav ul {
-  padding: 0;
-}
-
-.sidenav ul li{
-  list-style-type: none;
-  margin: 10px 0;
-}
-
-.sidenav ul li a{
-  color: #eaecef;
-  text-decoration: none;
-  font-size: 16px;
-  display: block;
-  padding: 10px;
-  border-radius: 6px;
-}
-
-.sidenav ul li a:hover,
-.sidenav ul li a:active{
-  background: #172b4b;
-
-  
 }
 
 /* Logo Styling DONT FORGET*/

@@ -6,35 +6,48 @@ import { BsBoundingBoxCircles } from "react-icons/bs";
 import { FaCode } from "react-icons/fa";
 import { LuNetwork } from "react-icons/lu";
 import { MdIosShare } from "react-icons/md";
+import { useState } from 'react';
+import PathEntry from '../PathEntry';
+import PlotAddition from '../PlotAddition/PlotAddition';
+import Code from '../Code/Code';
+import Nodes from '../Nodes/Nodes';
+import Share from '../Share/Share';
 
 function Sidebar(){
-    function pageUpdate(){
-        doPageUpdate(Math.random())
+    const [secondBar,setSecondBar] = useState('PathEntry')
+    function handleSecondBarChange(nextBar){
+        setSecondBar(nextBar);
     }
-    return(
-        <div className='nav-bar'>
-        <Link className ='logo' to='/'>
-            <img src={Logo} alt='logo'></img>
-        </Link>
 
-        <nav>
-            <NavLink exact="true" activeclassname="active" to="/" className='navigation-link'>
-                <FaFile className='icon-images'/>
-            </NavLink>
-            <NavLink exact="true" activeclassname="active" to="/plots-page">
-                <BsBoundingBoxCircles className='icon-images'/>
-            </NavLink>
-            <NavLink exact="true" activeclassname="active" to="/nodes-page">
-                <LuNetwork className='icon-images'/>
-            </NavLink>
-            <NavLink exact="true" activeclassname="active" to="/code-page">
-                <FaCode className='icon-images'/>
-            </NavLink>
-            <NavLink exact="true" activeclassname="active" to="/share-page">
-                <MdIosShare className='icon-images'/>
-            </NavLink>
-        </nav>
-    </div>
+    return(
+        <>
+            <div className='nav-bar'>
+                
+                <img className='logo-image' src={Logo} ></img>
+                
+                
+
+                <nav>
+                    <FaFile className='icon-images' onClick={() => handleSecondBarChange('PathEntry')}/>
+                    <BsBoundingBoxCircles className='icon-images'onClick={() => handleSecondBarChange('PlotAddition')}/>
+                    <LuNetwork className='icon-images' onClick={() => handleSecondBarChange('Nodes')}/>
+                    <FaCode className='icon-images'onClick={() => handleSecondBarChange('Code')} />
+                    <MdIosShare className='icon-images' onClick={() => handleSecondBarChange('Share')}/>
+                </nav>
+            </div>
+            <div className='page'>
+                <div className='container'>
+                    {(secondBar==='PathEntry') && (<PathEntry/>)}
+                    {(secondBar==='PlotAddition') && (<PlotAddition/>)}
+                    {(secondBar==='Nodes') && (<Nodes/>)}
+                    {(secondBar==='Code') && (<Code/>)}
+                    {(secondBar==='Share') && (<Share/>)}
+                </div>
+        
+            </div>
+            
+
+        </>
 
     )
     
