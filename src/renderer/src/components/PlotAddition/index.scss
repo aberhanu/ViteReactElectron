@@ -2,4 +2,24 @@
 .plot-div{
     background-color: #404040;
     padding: 10px;
+
+    select{
+        margin-bottom: 5px;
+        border-radius: 0;
+        margin-right: 27px;
+        background-color: #232323;
+        color: white;
+        border: 0;
+        padding: 5px;
+    }
+
+    .half{
+        width: 49%;
+        margin-left: 2%;
+        float: left;
+        &:first-child {
+            margin-left: 0;
+        }
+
+    }
 }

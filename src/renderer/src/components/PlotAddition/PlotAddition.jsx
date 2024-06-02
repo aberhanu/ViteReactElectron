@@ -94,21 +94,21 @@ function PlotAddition() {
                 </select>
                 {(plot.category === 'plot' || plot.category === 'barplot') && (
                   <div>
-                    <input
+                    <input className='half'
                       type="text"
                       placeholder="x coordinate"
                       value={plot.x}
                       onChange={(event) => handleXChange(plot.id, event)}
                     />
-                    <input
+                    <input className='half'
                       type="text"
                       placeholder="y coordinate"
                       value={plot.y}
                       onChange={(event) => handleYChange(plot.id, event)}
                     />
-                    <button onClick={() => handleDeletePlot(plot.id)}>Delete Plot</button>
                   </div>
                 )}
+                <button onClick={() => handleDeletePlot(plot.id)}>Delete Plot</button>
               </div>
             </li>
           ))}

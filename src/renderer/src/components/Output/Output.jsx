@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-
+import './index.scss'
 
 function Output() {
   const [pdfPath, setPdfPath] = useState('');
@@ -26,9 +26,9 @@ function Output() {
   return (
     <div className='output-div'>
       {pdfPath ? (
-        <embed src={`atom://${pdfPath}`}  id="pdf" width="850px" height="1100px" />
+        <embed className='pdf' src={`atom://${pdfPath}`}  id="pdf" width="850px" height="1100px" />
       ) : (
-        <p>No PDF Generated</p>
+        <p className='pdf'>No PDF Generated</p>
       )}
     </div>
   );
